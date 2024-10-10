@@ -16,7 +16,7 @@ int lembur(int jamKerja) {
     if (jamKerja > 8) {
         return (jamKerja - 8) * 1.5 * gajiPokokPerJam; // Kelebihan dihitung lembur
     }
-    return 0; // Tidak ada lembur jika bekerja <= 8 jam
+    return 0; 
 }
 
 // Fungsi untuk menghitung uang makan
@@ -24,21 +24,24 @@ int makan(int jamKerja) {
     if (jamKerja >= 9) {
         return 10000; // Uang makan untuk jam kerja >= 9 jam
     }
-    return 0; // Tidak ada uang makan jika bekerja < 9 jam
-}
+    return 0; 
 
 // Fungsi untuk menghitung uang transport lembur
 int transport(int jamKerja) {
     if (jamKerja >= 10) {
         return 13000; // Uang transport untuk jam kerja >= 10 jam
     }
-    return 0; // Tidak ada uang transport jika bekerja < 10 jam
+    return 0; 
 }
 
 int main() {
     string NIP, nama, Ulang;
     int jamKerja;
+    
+    cout << "selamat datang di program" << endl;
+    cout << "silahkan masukkan data2 berikut: " << endl;
 
+    while (true){
     // Input NIP, Nama, dan Jumlah Jam Kerja
     cout << "Masukkan NIP: ";
     cin >> NIP;
@@ -55,12 +58,13 @@ int main() {
     int uangTransport = transport(jamKerja);
 
     // Output NIP, Nama, Gaji Pokok, Lembur, Uang Makan, Transport
+    cout << "Berikut ini data dari pekerja" << endl;
     cout << "\nNIP: " << NIP << endl;
     cout << "Nama: " << nama << endl;
     cout << "Gaji Pokok: Rp. " << gajiPokok << endl;
     cout << "Uang Lembur: Rp. " << uangLembur << endl;
     cout << "Uang Makan: Rp. " << uangMakan << endl;
     cout << "Uang Transport: Rp. " << uangTransport << endl;
-
+    }
     return 0;
 }
